@@ -1,89 +1,100 @@
 // ─────────────────────────────────────────────────────────────
-//  CONFIGURACIÓN DEL CLIENTE
-//  Cambia estos datos para adaptar la plantilla a cada empresa
+//  CONFIGURACIÓN DEL CLIENTE — Tarta de Queso
 // ─────────────────────────────────────────────────────────────
 
 export const empresa = {
-  nombre:    "Tu Empresa",
-  slogan:    "La solución que tu negocio necesita",
-  descripcion: "Llevamos más de 10 años ofreciendo el mejor servicio de la zona. Calidad, confianza y profesionalidad en cada trabajo.",
-  telefono:  "+34 600 000 000",
-  email:     "contacto@tuempresa.com",
-  direccion: "Calle Ejemplo 1, 28001 Madrid",
-  horario:   "Lun–Vie 9:00–19:00 · Sáb 9:00–14:00",
-  whatsapp:  "34600000000",
+  nombre:      "Tarta de Queso",
+  slogan:      "Cheesecakes y galletas artesanales que enamoran",
+  descripcion: "Pastelería creativa y repostería artesanal en Montellano, Sevilla. Especialistas en tartas personalizadas, cheesecakes, galletas rellenas y cookies artesanales. Repostería creativa y personalizada para eventos, celebraciones y ocasiones especiales.",
+  telefono:    "+34 675 332 329",
+  email:       "",
+  direccion:   "Plaza de la Industria 28, Montellano, Sevilla",
+  horario:     "Consulta disponibilidad por WhatsApp",
+  whatsapp:    "34675332329",
 
   // Redes sociales (deja en "" para ocultar)
-  instagram: "https://instagram.com/tuempresa",
-  facebook:  "https://facebook.com/tuempresa",
-  google:    "",
+  instagram: "",
+  facebook:  "",
+  tiktok:    "https://www.tiktok.com/@tarta_de_quesoo",
 }
 
 export const servicios = [
   {
-    icono:       "Wrench",
-    titulo:      "Servicio 1",
-    descripcion: "Descripción breve del servicio. Qué incluye y qué problema del cliente resuelve.",
-    precio:      "Desde 99 €",
-  },
-  {
-    icono:       "Shield",
-    titulo:      "Servicio 2",
-    descripcion: "Descripción breve del servicio. Qué incluye y qué problema del cliente resuelve.",
-    precio:      "Desde 149 €",
-  },
-  {
-    icono:       "Star",
-    titulo:      "Servicio 3",
-    descripcion: "Descripción breve del servicio. Qué incluye y qué problema del cliente resuelve.",
-    precio:      "Desde 199 €",
-  },
-  {
-    icono:       "Clock",
-    titulo:      "Servicio 4",
-    descripcion: "Descripción breve del servicio. Qué incluye y qué problema del cliente resuelve.",
-    precio:      "Desde 79 €",
-  },
-  {
-    icono:       "MapPin",
-    titulo:      "Servicio 5",
-    descripcion: "Descripción breve del servicio. Qué incluye y qué problema del cliente resuelve.",
+    icono:       "Cookie",
+    titulo:      "Galletas Rellenas",
+    descripcion: "Pistacho, Oreo, Nutella, Kinder, Happy Hippo, Chocolate blanco, Turrón, Lotus, Limón, Donettes, Snickers, Arroz con leche, Chocolate blanco y arándanos, Pantera Rosa, Red Velvet, Coco y más.",
     precio:      "A consultar",
   },
   {
-    icono:       "Phone",
-    titulo:      "Servicio 6",
-    descripcion: "Descripción breve del servicio. Qué incluye y qué problema del cliente resuelve.",
-    precio:      "Gratis",
+    icono:       "Cake",
+    titulo:      "Cheesecakes",
+    descripcion: "Clásica con mermelada casera de frutos rojos, Queso de cabra miel y frutos secos, Lotus, Turrón, Ferrero, Oreo, Crema Catalana, Pantera Rosa, Pistacho, Baileys, Kinder, Happy Hippo, Nutella, Dulce de leche, Tiramisú, Chocolate blanco y filipinos, Banofee, Torrijas, Limón y merengue, Donettes y más.",
+    precio:      "A consultar",
+  },
+  {
+    icono:       "Cake",
+    titulo:      "Minitartas",
+    descripcion: "Tarta de la abuela, Tarta blanca, Lotus y chocolate blanco, Brownie, Zanahoria y queso, Red velvet con crema de chocolate blanco, Chocolate y oreo, Ferrero, Pistacho, Crema y turrón.",
+    precio:      "A consultar",
+  },
+  {
+    icono:       "Sparkles",
+    titulo:      "Mousse",
+    descripcion: "Fresa, Pistacho, Turrón, Limón y merengue, 3 Chocolates, Yogurt y mermelada casera de mango, Piña colada.",
+    precio:      "A consultar",
+  },
+  {
+    icono:       "Heart",
+    titulo:      "Pedidos personalizados",
+    descripcion: "¿Tienes una celebración especial? Te preparamos tu tarta o galletas a medida para bodas, cumpleaños o cualquier ocasión.",
+    precio:      "A consultar",
+  },
+  {
+    icono:       "Gift",
+    titulo:      "Regalos y detalles",
+    descripcion: "Packaging cuidado y presentación especial, perfecto para regalar y sorprender en cualquier momento.",
+    precio:      "Pregúntanos",
+  },
+  {
+    icono:       "Sparkles",
+    titulo:      "100% Artesanal",
+    descripcion: "Todos nuestros productos se elaboran de forma artesanal con ingredientes de calidad seleccionados.",
+    precio:      "Hecho con amor",
+  },
+  {
+    icono:       "MessageCircle",
+    titulo:      "Encargos por WhatsApp",
+    descripcion: "Reserva con antelación y recibe tu pedido en la fecha que necesites. Proceso fácil y rápido.",
+    precio:      "Rápido y sencillo",
   },
 ]
 
 export const stats = [
-  { valor: "10+",  label: "Años de experiencia" },
-  { valor: "500+", label: "Clientes satisfechos" },
-  { valor: "98%",  label: "Valoración positiva" },
-  { valor: "24h",  label: "Tiempo de respuesta" },
+  { valor: "20+",  label: "Sabores de cheesecake" },
+  { valor: "15+",  label: "Galletas rellenas" },
+  { valor: "100%", label: "Elaboración artesanal" },
+  { valor: "❤️",   label: "Hecho con amor" },
 ]
 
 export const testimonios = [
   {
-    nombre:   "María García",
-    cargo:    "Propietaria, Restaurante El Rincón",
-    texto:    "Excelente servicio, muy profesionales. Lo recomendaría sin dudarlo a cualquier empresa.",
+    nombre:    "María García",
+    cargo:     "Cliente habitual",
+    texto:     "Las galletas de pistacho son una locura. Nunca había probado nada igual, y el packaging es precioso para regalar.",
     estrellas: 5,
   },
   {
-    nombre:   "Carlos López",
-    cargo:    "Autónomo",
-    texto:    "Rápidos, eficientes y a buen precio. Llevan años atendiéndome y siempre dan la talla.",
+    nombre:    "Carlos López",
+    cargo:     "Pedido de cumpleaños",
+    texto:     "Encargué una cheesecake de Baileys para el cumpleaños de mi mujer y fue el éxito de la noche. Repetiré seguro.",
     estrellas: 5,
   },
   {
-    nombre:   "Ana Martínez",
-    cargo:    "Directora, Clínica Salud+",
-    texto:    "El trato personal marca la diferencia. Se nota que les importa el cliente de verdad.",
+    nombre:    "Ana Martínez",
+    cargo:     "Clienta de Sevilla",
+    texto:     "La cheesecake clásica con mermelada de frutos rojos está espectacular. Calidad artesanal que se nota en cada bocado.",
     estrellas: 5,
   },
 ]
 
-export const mapaEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304605!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1234567890"
+export const mapaEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12812.345!2d-5.5893!3d37.0123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c1a0a0a0a0a0a%3A0x0!2sMontellano%2C+Sevilla!5e0!3m2!1ses!2ses!4v1234567890"

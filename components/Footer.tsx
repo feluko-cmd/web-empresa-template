@@ -1,10 +1,19 @@
-import { Phone, Mail, MapPin, Globe, Share2 } from "lucide-react"
+import { Phone, Mail, MapPin, Video } from "lucide-react"
+
+const InstagramIcon = ({ size = 16 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+  </svg>
+)
 import { empresa } from "@/app/config"
 
 const links = [
   { label: "Inicio",    href: "#inicio" },
   { label: "Servicios", href: "#servicios" },
   { label: "Nosotros",  href: "#nosotros" },
+  { label: "Galería",   href: "#galeria" },
   { label: "Opiniones", href: "#opiniones" },
   { label: "Contacto",  href: "#contacto" },
 ]
@@ -24,14 +33,14 @@ export default function Footer() {
             <div className="flex gap-3 mt-5">
               {empresa.instagram && (
                 <a href={empresa.instagram} target="_blank" rel="noreferrer"
-                  className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
-                  <Globe size={16} />
+                  className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+                  <InstagramIcon size={16} />
                 </a>
               )}
-              {empresa.facebook && (
-                <a href={empresa.facebook} target="_blank" rel="noreferrer"
-                  className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
-                  <Share2 size={16} />
+              {empresa.tiktok && (
+                <a href={empresa.tiktok} target="_blank" rel="noreferrer"
+                  className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+                  <Video size={16} />
                 </a>
               )}
             </div>
@@ -56,19 +65,21 @@ export default function Footer() {
             <div className="text-white font-semibold mb-4">Contacto</div>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2 text-gray-400">
-                <Phone size={14} className="text-blue-400 shrink-0" />
+                <Phone size={14} className="text-primary shrink-0" />
                 <a href={`tel:${empresa.telefono}`} className="hover:text-white transition-colors">
                   {empresa.telefono}
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-gray-400">
-                <Mail size={14} className="text-blue-400 shrink-0" />
-                <a href={`mailto:${empresa.email}`} className="hover:text-white transition-colors">
-                  {empresa.email}
-                </a>
-              </li>
+              {empresa.email && (
+                <li className="flex items-center gap-2 text-gray-400">
+                  <Mail size={14} className="text-primary shrink-0" />
+                  <a href={`mailto:${empresa.email}`} className="hover:text-white transition-colors">
+                    {empresa.email}
+                  </a>
+                </li>
+              )}
               <li className="flex items-start gap-2 text-gray-400">
-                <MapPin size={14} className="text-blue-400 mt-0.5 shrink-0" />
+                <MapPin size={14} className="text-primary mt-0.5 shrink-0" />
                 {empresa.direccion}
               </li>
             </ul>

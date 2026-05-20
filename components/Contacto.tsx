@@ -5,7 +5,7 @@ import { empresa, mapaEmbed } from "@/app/config"
 
 export default function Contacto() {
   const [enviado, setEnviado] = useState(false)
-  const [form, setForm] = useState({ nombre: "", email: "", telefono: "", mensaje: "" })
+  const [form, setForm] = useState({ nombre: "", email: "", telefono: "", evento: "Cumpleaños", fecha: "", mensaje: "" })
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -18,11 +18,11 @@ export default function Contacto() {
       <div className="max-w-6xl mx-auto px-4">
 
         <div className="text-center mb-16">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Estamos aquí para ayudarte
           </span>
-          <h2 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900">
-            Contacta con nosotros
+          <h2 className="mt-2 text-3xl md:text-4xl font-bold font-heading text-gray-900">
+            Haz tu encargo
           </h2>
           <p className="mt-4 text-gray-500 max-w-xl mx-auto">
             Cuéntanos lo que necesitas y te respondemos en menos de 24 horas.
@@ -34,12 +34,12 @@ export default function Contacto() {
           {/* Datos de contacto */}
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
                 <Phone size={20} />
               </div>
               <div>
                 <div className="font-semibold text-gray-900">Teléfono</div>
-                <a href={`tel:${empresa.telefono}`} className="text-blue-600 hover:underline">
+                <a href={`tel:${empresa.telefono}`} className="text-primary hover:underline">
                   {empresa.telefono}
                 </a>
               </div>
@@ -58,20 +58,22 @@ export default function Contacto() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center shrink-0">
-                <Mail size={20} />
+            {empresa.email && (
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+                  <Mail size={20} />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Email</div>
+                  <a href={`mailto:${empresa.email}`} className="text-primary hover:underline">
+                    {empresa.email}
+                  </a>
+                </div>
               </div>
-              <div>
-                <div className="font-semibold text-gray-900">Email</div>
-                <a href={`mailto:${empresa.email}`} className="text-blue-600 hover:underline">
-                  {empresa.email}
-                </a>
-              </div>
-            </div>
+            )}
 
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
                 <MapPin size={20} />
               </div>
               <div>
@@ -81,7 +83,7 @@ export default function Contacto() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
                 <Clock size={20} />
               </div>
               <div>
@@ -108,7 +110,7 @@ export default function Contacto() {
                 <h3 className="text-xl font-semibold text-gray-900">¡Mensaje enviado!</h3>
                 <p className="text-gray-500">Te respondemos en menos de 24 horas.</p>
                 <button onClick={() => setEnviado(false)}
-                  className="text-blue-600 hover:underline text-sm">
+                  className="text-primary hover:underline text-sm">
                   Enviar otro mensaje
                 </button>
               </div>
@@ -120,14 +122,38 @@ export default function Contacto() {
                     <input required type="text" placeholder="Tu nombre"
                       value={form.nombre}
                       onChange={e => setForm({ ...form, nombre: e.target.value })}
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
                     <input type="tel" placeholder="+34 600 000 000"
                       value={form.telefono}
                       onChange={e => setForm({ ...form, telefono: e.target.value })}
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Tipo de Evento</label>
+                    <select
+                      value={form.evento}
+                      onChange={e => setForm({ ...form, evento: e.target.value })}
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white"
+                    >
+                      <option>Cumpleaños</option>
+                      <option>Boda / Celebración</option>
+                      <option>Mesa Dulce</option>
+                      <option>Antojo personal</option>
+                      <option>Otro</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Fecha de Entrega (Aprox.)</label>
+                    <input type="date"
+                      value={form.fecha}
+                      onChange={e => setForm({ ...form, fecha: e.target.value })}
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white" />
                   </div>
                 </div>
 
@@ -136,21 +162,21 @@ export default function Contacto() {
                   <input required type="email" placeholder="tu@email.com"
                     value={form.email}
                     onChange={e => setForm({ ...form, email: e.target.value })}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white" />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-                  <textarea required rows={5} placeholder="¿En qué podemos ayudarte?"
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Detalles del Pedido</label>
+                  <textarea required rows={4} placeholder="¿Qué tarta o galletas te gustaría encargar? (Sabores, cantidades...)"
                     value={form.mensaje}
                     onChange={e => setForm({ ...form, mensaje: e.target.value })}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white resize-none" />
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white resize-none" />
                 </div>
 
                 <button type="submit"
-                  className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold py-4 rounded-xl hover:bg-blue-700 transition-colors">
-                  <Send size={16} />
-                  Enviar mensaje
+                  className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground font-semibold py-4 rounded-xl hover:bg-primary/90 transition-colors shadow-md">
+                  <Send size={18} />
+                  Solicitar Presupuesto
                 </button>
 
                 <p className="text-xs text-gray-400 text-center">

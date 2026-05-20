@@ -1,25 +1,59 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import { empresa } from "./config"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-heading" })
 
 export const metadata: Metadata = {
-  title:       `${empresa.nombre} — ${empresa.slogan}`,
+  title: {
+    default: `${empresa.nombre} | ${empresa.slogan}`,
+    template: `%s | ${empresa.nombre}`
+  },
   description: empresa.descripcion,
-  keywords:    `${empresa.nombre}, servicios, ${empresa.direccion}`,
+  keywords: ["repostería creativa", "tartas personalizadas", "cheesecake", "galletas rellenas", "Montellano", "Sevilla", "eventos", "bodas", "cumpleaños"],
+  authors: [{ name: empresa.nombre }],
+  creator: empresa.nombre,
   openGraph: {
-    title:       empresa.nombre,
+    type: "website",
+    locale: "es_ES",
+    url: "https://tartadequeso.com",
+    title: empresa.nombre,
     description: empresa.descripcion,
-    type:        "website",
+    siteName: empresa.nombre,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${empresa.nombre} - Repostería Artesanal`
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: empresa.nombre,
+    description: empresa.descripcion,
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground`}>
         {children}
       </body>
     </html>

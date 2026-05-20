@@ -8,7 +8,7 @@ export default function Testimonios() {
       <div className="max-w-6xl mx-auto px-4">
 
         <div className="text-center mb-16">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Lo que dicen de nosotros
           </span>
           <h2 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900">
@@ -37,7 +37,7 @@ export default function Testimonios() {
 
                 {/* Autor */}
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">
                     {t.nombre.charAt(0)}
                   </div>
                   <div>
